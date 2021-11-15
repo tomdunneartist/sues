@@ -1,0 +1,575 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+a:not([class]) {
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@font-face {
+    font-family: "Scto Grotesk A";
+    src: url("../fonts/SctoGroteskA-Medium.woff2") format("woff2"), url("../fonts/SctoGroteskA-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Scto Grotesk A";
+    src: url("../fonts/SctoGroteskA-Light.woff2") format("woff2"), url("../fonts/SctoGroteskA-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Merlo";
+    src: url("../fonts/MerloItalic.woff2") format("woff2"), url("../fonts/MerloItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Merlo";
+    src: url("../fonts/MerloRoman.woff2") format("woff2"), url("../fonts/MerloRoman.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    /* 1 */
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    /* 2 */
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+    /* 3 */
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+    height: auto !important;
+    margin: auto !important;
+    overflow: visible !important;
+    width: auto !important;
+    white-space: normal !important;
+}
+
+* {
+    scrollbar-width: 0;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+::-moz-selection {
+    background: #d4d9d4;
+}
+
+::selection {
+    background: #d4d9d4;
+}
+
+html,
+body {
+    font-family: "Merlo", serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+@media (min-width: 960px) {
+
+    html,
+    body {
+        height: 100%;
+    }
+}
+
+body {
+    background: #f2edde;
+}
+
+@media (max-width: 960px) {
+    body.touch-device {
+        height: 100%;
+        position: fixed;
+    }
+}
+
+body.js-noscroll {
+    overflow: hidden;
+}
+
+@media (min-width: 960px) {
+    body {
+        overflow-y: hidden;
+    }
+}
+
+
+
+.main {
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    position: relative;
+}
+
+@media (min-width: 960px) {
+    .main {
+        height: 100vh;
+        overflow: auto;
+    }
+}
+
+footer {
+    background: #f2edde;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+@media (max-width: 960px) {
+    footer {
+        box-shadow: 0px -15px 30px 20px #f2edde;
+    }
+}
+
+@media (min-width: 960px) {
+    footer {
+        padding: 20px;
+    }
+}
+
+footer a,
+footer p {
+    color: #000;
+    font-family: "Scto Grotesk A", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 0.6;
+}
+
+@media (min-width: 960px) {
+
+    footer a,
+    footer p {
+        font-size: 60px;
+    }
+
+    footer a:first-child,
+    footer p:first-child {
+        margin-left: -4px;
+    }
+}
+
+
+
+.intro {
+    display: none;
+    background-color: #eeeeee;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 300ms linear;
+}
+
+.intro.js-intro-hide {
+    opacity: 0;
+}
+
+
+.intro__text p {
+    margin-bottom: 20px;
+}
+
+.intro__text p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 960px) {
+    .intro__text {
+        font-size: 18px;
+    }
+}
+
+.folio {
+    height: 100%;
+    position: relative;
+    padding: 12px 12px 100px;
+}
+
+@media (min-width: 960px) {
+    .folio {
+        padding: 20px;
+    }
+}
+
+.folio__inner {
+    white-space: nowrap;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+@media (max-width: 960px) {
+    .folio__inner {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        white-space: normal;
+    }
+}
+
+.folio__item {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.folio__item.js-show-caption p {
+    opacity: 1;
+}
+
+@media (min-width: 960px) {
+    .folio__item {
+        margin-right: 20px;
+    }
+
+    .folio__item:last-child {
+        margin-right: 0;
+    }
+
+    .folio__item:last-child:after {
+        content: " ";
+        display: block;
+        width: 20px;
+        height: 1px;
+        position: absolute;
+        right: -20px;
+        top: 0;
+    }
+}
+
+.folio__item img,
+.folio__item video {
+    display: block;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 960px) {
+
+    .folio__item img,
+    .folio__item video {
+        max-width: none;
+        margin-bottom: 10px;
+        height: 100%;
+        width: auto;
+    }
+}
+
+.folio__item p {
+    max-width: 97%;
+    white-space: normal;
+    font-family: "Scto Grotesk A", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.folio__item p a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+}
+
+@media (max-width: 960px) {
+    .folio__item p {
+        background: #f2edde;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        opacity: 0;
+        transition: opacity 100ms linear;
+        margin: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .folio__item.size_a {
+        height: 75vh;
+    }
+
+    .folio__item.size_a img,
+    .folio__item.size_a video {
+        max-height: 765px;
+    }
+
+    .folio__item.size_b {
+        height: 60vh;
+    }
+
+    .folio__item.size_b img,
+    .folio__item.size_b video {
+        max-height: 637px;
+    }
+
+    .folio__item.size_c {
+        height: 50vh;
+    }
+
+    .folio__item.size_c img,
+    .folio__item.size_c video {
+        max-height: 510px;
+    }
+
+    .folio__item.size_d {
+        height: 37vh;
+    }
+
+    .folio__item.size_d img,
+    .folio__item.size_d video {
+        max-height: 382px;
+    }
+}
+
+.nonna {
+    width: 25vh;;
+}
+
+.about {
+    background: #ebeaea;
+    position: fixed;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 12px 12px 150px;
+    z-index: 2;
+    overflow-y: auto;
+}
+
+@media (min-width: 960px) {
+    .about {
+        padding: 20px 20px 150px;
+    }
+}
+
+.about.js-about-visible {
+    left: 0;
+}
+
+.about.js-about-visible footer {
+    position: fixed;
+}
+
+.about footer {
+    background: #ebeaea;
+    position: absolute;
+}
+
+@media (max-width: 960px) {
+    .about footer {
+        box-shadow: 0px -15px 30px 20px #af6446;
+    }
+}
+
+.about__inner {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+@media (min-width: 960px) {
+    .about__inner {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+.about__text {
+    font-family: "Merlo", serif;
+    font-size: 19px;
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 960px) {
+    .about__text {
+        padding-right: 18%;
+        font-size: 26px;
+        line-height: 32px;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-height: 650px) and (min-width: 960px) {
+    .about__text {
+        font-size: 22px;
+        line-height: 27px;
+    }
+}
+
+.about__text a {
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 0;
+    display: inline;
+    position: relative;
+    border-bottom: 1px solid #000;
+    /*
+  &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: $col-black;
+      width: 100%;
+      height: 1px;
+      bottom: 2px;
+      left: 0;
+
+      @include respond-to('medium') {
+          bottom: 2px;
+      }
+  }
+  */
+}
+
+.about__image img {
+    margin-bottom: 12px;
+}
+
+.about__image p {
+    max-width: 97%;
+    white-space: normal;
+    font-family: "Scto Grotesk A", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.about__image p a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+}
+
+@media (min-width: 960px) {
+    .about__image {
+        height: 50vh;
+    }
+
+    .about__image img {
+        max-height: 510px;
+        display: block;
+        margin-bottom: 10px;
+        max-width: none;
+        height: 100%;
+        width: auto;
+    }
+}
